@@ -3,6 +3,7 @@ Changelog
 Makefile.PL
 README
 CONTRIBUTING.md
+SECURITY.md
 V.pm
 cpanfile
 t/10_base.t

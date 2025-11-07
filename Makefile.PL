@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Copyright PROCURA B.V. (c) 2009-2024 H.Merijn Brand
+# Copyright PROCURA B.V. (c) 2009-2025 H.Merijn Brand
 
 use strict;
 
@@ -52,13 +52,7 @@ sub postamble {
 	'',
 	'doc docs:		doc/Config-Perl-V.md doc/Config-Perl-V.html doc/Config-Perl-V.man',
 	'doc/Config-Perl-V.md:		V.pm',
-	'	pod2markdown  < $? > $@',
-	'doc/Config-Perl-V.html:	V.pm',
-	'	pod2html      < $? 2>&1 | grep -v "^Cannot find" > $@',
-	'doc/Config-Perl-V.3:		V.pm',
-	'	pod2man       < $? > $@',
-	'doc/Config-Perl-V.man:		doc/Config-Perl-V.3',
-	'	nroff2man     < $? > $@',
+	'	perl doc/make-doc.pl',
 	'';
     } # postamble
 

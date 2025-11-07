@@ -1,4 +1,4 @@
-STDIN(1)              User Contributed Perl Documentation             STDIN(1)
+V(3)                  User Contributed Perl Documentation                 V(3)
 
 NAME
        Config::Perl::V - Structured data retrieval of perl -V output
@@ -71,16 +71,16 @@ DESCRIPTION
            This information is not available anywhere else, including %Config,
            but it is the information that is only known to the perl binary.
 
-           The  extracted  information  is  stored in 5 entries in the "build"
+           The extracted information is stored in 5 entries in the "build"
            hash:
 
            osname
-               This is most likely the same as $Config{osname},  and  was  the
-               name  known  when perl was built. It might be different if perl
+               This is most likely the same as $Config{osname}, and was the
+               name known when perl was built. It might be different if perl
                was cross-compiled.
 
-               The default for this field, if it cannot be  extracted,  is  to
-               copy  $Config{osname}.  The  two  may  be  differing  in casing
+               The default for this field, if it cannot be extracted, is to
+               copy $Config{osname}. The two may be differing in casing
                (OpenBSD vs openbsd).
 
            stamp
@@ -89,40 +89,40 @@ DESCRIPTION
 
            options
                This is a hash with all the known defines as keys. The value is
-               either 0, which means unknown  or  unset,  or  1,  which  means
+               either 0, which means unknown or unset, or 1, which means
                defined.
 
            derived
-               As  some  variables  are  reported  by  a different name in the
-               output of "perl -V"  than  their  actual  name  in  %Config,  I
-               decided  to  leave  the  "config"  entry as close to reality as
-               possible, and put in the entries that might have  been  guessed
+               As some variables are reported by a different name in the
+               output of "perl -V" than their actual name in %Config, I
+               decided to leave the "config" entry as close to reality as
+               possible, and put in the entries that might have been guessed
                by the printed output in a separate block.
 
            patches
-               This  is  a list of optionally locally applied patches. Default
+               This is a list of optionally locally applied patches. Default
                is an empty list.
 
        environment
-           By default this hash is only filled with the environment  variables
-           out  of  %ENV  that  start  with "PERL", but you can pass the "env"
+           By default this hash is only filled with the environment variables
+           out of %ENV that start with "PERL", but you can pass the "env"
            option to myconfig to get more
 
             my $conf = Config::Perl::V::myconfig ({ env => qr/^ORACLE/ });
             my $conf = Config::Perl::V::myconfig ([ env => qr/^ORACLE/ ]);
 
        config
-           This hash is filled with the variables that  "perl  -V"  fills  its
-           report  with, and it has the same variables that "Config::myconfig"
+           This hash is filled with the variables that "perl -V" fills its
+           report with, and it has the same variables that "Config::myconfig"
            returns from %Config.
 
        inc This is the list of default @INC.
 
 REASONING
-       This module was written to be able to return the configuration for  the
-       currently  used perl as deeply as needed for the CPANTESTERS framework.
-       Up until now they used the output of myconfig as a  single  text  blob,
-       and  so  it was missing the vital binary characteristics of the running
+       This module was written to be able to return the configuration for the
+       currently used perl as deeply as needed for the CPANTESTERS framework.
+       Up until now they used the output of myconfig as a single text blob,
+       and so it was missing the vital binary characteristics of the running
        perl and the optional applied patches.
 
 BUGS
@@ -138,9 +138,9 @@ AUTHOR
        H.Merijn Brand <h.m.brand@xs4all.nl>
 
 COPYRIGHT AND LICENSE
-       Copyright (C) 2009-2024 H.Merijn Brand
+       Copyright (C) 2009-2025 H.Merijn Brand
 
        This library is free software; you can redistribute it and/or modify it
        under the same terms as Perl itself.
 
-perl v5.38.2                      2024-01-04                          STDIN(1)
+perl v5.40.1                      2025-03-19                              V(3)

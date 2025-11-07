@@ -5,7 +5,7 @@ on "configure" => sub {
 
     recommends "ExtUtils::MakeMaker"      => "7.22";
 
-    suggests   "ExtUtils::MakeMaker"      => "7.70";
+    suggests   "ExtUtils::MakeMaker"      => "7.72";
     };
 
 on "test" => sub {
