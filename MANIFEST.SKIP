@@ -18,6 +18,7 @@ sandbox/
 \.tgz$
 \.tmp$
 \.travis.yml
+^\.test_info\.
 \.whitesource
 doc/
 xt/
