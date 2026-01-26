@@ -56,7 +56,7 @@ configure_requires:
 configure_recommends:
     ExtUtils::MakeMaker: 7.22
 configure_suggests:
-    ExtUtils::MakeMaker: 7.72
+    ExtUtils::MakeMaker: 7.76
 build_requires:
     perl:                5.006
 test_requires:
