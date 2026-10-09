@@ -6,7 +6,7 @@
 use 5.018002;
 use warnings;
 
-my $n = 0 + shift // 1;
+my $n = 0 + (shift // 1);
 
 foreach my $tf (sort glob "t/[2-9]*.t") {
     open my $fh, "<", $tf or die "$tf: $!\n";

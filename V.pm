@@ -5,7 +5,7 @@ use warnings;
 
 use Config;
 use Exporter;
-our $VERSION     = "0.39";
+our $VERSION     = "0.41";
 our @ISA         = qw( Exporter );
 our @EXPORT_OK   = qw( plv2hash summary myconfig signature );
 our %EXPORT_TAGS = (
@@ -62,6 +62,7 @@ my %BTD = map {( $_ => 0 )} qw(
     PERL_PRESERVE_IVUV
     PERL_RC_STACK
     PERL_RELOCATABLE_INCPUSH
+    PERL_USE_ATOMIC
     PERL_USE_DEVEL
     PERL_USE_SAFE_PUTENV
     PERL_USE_UNSHARED_KEYS_IN_LARGE_HASHES
@@ -384,8 +385,8 @@ sub myconfig {
 					Config::non_bincompat_options ();
 	}
     else {
-	#y $pv = qx[$^X -e"sub Config::myconfig{};" -V];
-	my $cnf = plv2hash (qx[$^X -V]);
+	#y $pv = qx["$^X" -e"sub Config::myconfig{};" -V];
+	my $cnf = plv2hash (qx["$^X" -V]);
 
 	$build->{$_} = $cnf->{'build'}{$_} for qw( osname stamp patches options );
 	}

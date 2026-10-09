@@ -41,7 +41,7 @@ version:                 VERSION
 abstract:                Structured data retrieval of perl -V output
 license:                 perl
 author:              
-    - H.Merijn Brand <hmbrand@cpan.org>
+    - H.Merijn Brand <perl5@tux.freedom.nl>
 generated_by:            Author
 distribution_type:       module
 provides:
@@ -56,7 +56,7 @@ configure_requires:
 configure_recommends:
     ExtUtils::MakeMaker: 7.22
 configure_suggests:
-    ExtUtils::MakeMaker: 7.76
+    ExtUtils::MakeMaker: 7.78
 build_requires:
     perl:                5.006
 test_requires:
